@@ -1,14 +1,40 @@
 {
-  "name": "serverless-status-board",
+  "name": "recordrtc-react",
   "version": "1.0.0",
-  "description": "Open Source Serverless Status Board for custom views of open issues and PRs in your repo",
-  "author": "DavidWells",
-  "license": "MIT",
+  "description": "RecordRTC example with React and Node/Express",
+  "main": "index.js",
   "scripts": {
-    "docs": "md-magic --path 'README.md' --ignore 'node_modules'"
+    "start": "react-scripts start",
+    "go": "react-scripts start"
+  },
+  "author": "Suzanne Wang",
+  "license": "MIT",
+  "dependencies": {
+    "aws-sdk": "^2.2.30",
+    "body-parser": "^1.14.2",
+    "express": "^4.13.3",
+    "express-session": "^1.13.0",
+    "path": "^0.12.7",
+    "react": "^0.14.6",
+    "react-bootstrap": "^0.28.2",
+    "react-dom": "^0.14.6",
+    "recordrtc": "^5.2.6",
+    "whatwg-fetch": "^0.10.1"
   },
   "devDependencies": {
+    "babel-core": "^6.4.0",
+    "babel-loader": "^6.2.1",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "babel-preset-stage-0": "^6.3.13",
     "css-loader": "^0.27.2",
-    "markdown-magic": "^0.1.13"
+    "exports-loader": "^0.6.2",
+    "imports-loader": "^0.6.5",
+    "nodemon": "^1.8.1",
+    "react-scripts": "^0.9.5",
+    "style-loader": "^0.13.2",
+    "webpack": "^1.12.11",
+    "webpack-dev-middleware": "^1.4.0",
+    "webpack-hot-middleware": "^2.6.0"
   }
 }

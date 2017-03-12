@@ -4,7 +4,7 @@ var path = require('path');
 module.exports = {
   entry: [
     'webpack-hot-middleware/client',
-    './src/app.js'
+    './src/index.js'
   ],
 
   output: {
@@ -19,6 +19,7 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
+        exclude: /assets/,
         loaders: ['babel?presets[]=react,presets[]=es2015,presets[]=stage-0']
       },
       { test: /\.css$/, loader: "style-loader!css-loader" }
