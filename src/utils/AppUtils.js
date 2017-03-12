@@ -10,6 +10,7 @@ export function captureUserMedia(callback) {
 // handle S3 upload
 function getSignedUrl(file) {
   let queryString = '?objectName=' + file.id + '&contentType=' + encodeURIComponent(file.type) + '&username=' + file.user;
+  debugger;
   return fetch('/s3/sign' + queryString)
   .then((response) => {
     return response.json();
@@ -61,4 +62,3 @@ export function S3Upload(fileInfo) { //parameters: { type, data, id }
     })
   })
 }
-
