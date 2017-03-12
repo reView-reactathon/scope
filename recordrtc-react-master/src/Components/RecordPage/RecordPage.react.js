@@ -1,6 +1,6 @@
 import React from 'react';
-import { captureUserMedia, S3Upload } from './AppUtils';
-import Webcam from './Webcam.react';
+import { captureUserMedia, S3Upload } from './utils/AppUtils';
+import Webcam from './Webcam/Webcam.react';
 import RecordRTC from 'recordrtc';
 import { Modal } from 'react-bootstrap';
 
@@ -98,4 +98,3 @@ class RecordPage extends React.Component {
 }
 
 export default RecordPage;
-

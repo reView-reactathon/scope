@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Language from './Language/Language';
+import Language from '../Language/Language';
 import './App.css';
 
 class Init extends Component {

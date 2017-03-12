@@ -1,6 +1,6 @@
 body {
   position: relative;
-  background: url('../../assets/dev-image.jpg') center / cover;
+  background: url('../../../assets/dev-image.jpg') center / cover;
 }
 
 .overlay {
