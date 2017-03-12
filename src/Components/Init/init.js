@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Language from '../Language/Language';
 import StartInterview from '../StartInterview/StartInterview'
+import QuestionForm from '../Questions/QuestionForm';
 import './App.css';
 
 class Init extends Component {
@@ -32,6 +33,7 @@ class Init extends Component {
             <div className="App-header">
               <h2>Welcome to ReView</h2>
             </div>
+            <QuestionForm />
             { this.toggleComponent() }
           </div>
         );
