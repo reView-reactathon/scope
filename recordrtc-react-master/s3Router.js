@@ -18,10 +18,11 @@ function S3Router(options) {
   }
 
   router.get('/sign', function(req, res) {
+    console.log(req.query)
     var filename = req.query.objectName;
     var mimeType = req.query.contentType;
     var ext = '.' + findType(mimeType);
-    var fileKey = filename + ext;
+    var fileKey = req.query.username + '/' + filename + ext;
 
     var s3 = new aws.S3();
 
