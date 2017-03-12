@@ -16,7 +16,7 @@ exports.sendEmailConfirmation = functions.database.ref('/answers/{id}').onWrite(
   const { data, params } = event;
 
   // Load the data references
-  const userId = data.child('user').val();
+  const userEmail = data.child('user').val();
   const questionId = data.child('question').val();
   const answerId = params.id;
 
@@ -27,11 +27,7 @@ exports.sendEmailConfirmation = functions.database.ref('/answers/{id}').onWrite(
   data.ref.root.once('value').then((snap) => {
 
     // Load the root
-    const creatorId = snap.child(`questions/${questionId}/user`).val();
-    const creatorEmail = snap.child(`users/${creatorId}/email`).val();
-    const userEmail = snap.child(`users/${userId}/email`).val();
-
-    // Load the question name
+    const creatorEmail = snap.child(`questions/${questionId}/email`).val();
     const questionName = snap.child(`questions/${questionId}/name`).val();
 
     // Send the email to the question owner
