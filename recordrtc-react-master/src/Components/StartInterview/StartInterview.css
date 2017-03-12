@@ -1,0 +1,13 @@
+
+.interview-video-template {
+    position: relative;
+    width: 640px;
+    height: 480px;
+    padding: 10px;
+    background: black
+}
+.interview-video-template button {
+    position: absolute;
+    top: 240px;
+    left: 240px;
+}
