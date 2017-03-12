@@ -3,6 +3,7 @@ import { captureUserMedia, S3Upload } from './AppUtils';
 import Webcam from './Webcam.react';
 import RecordRTC from 'recordrtc';
 import { Modal } from 'react-bootstrap';
+var database = firebase.database();
 
 const hasGetUserMedia = !!(navigator.getUserMedia || navigator.webkitGetUserMedia ||
                         navigator.mozGetUserMedia || navigator.msGetUserMedia);
@@ -63,12 +64,22 @@ class RecordPage extends React.Component {
 
       this.setState({ uploading: true });
 
+      function writeUserData(userId) {
+        firebase.database().ref('users/' + userId).set({
+          videoId: 12345,
+          questionId: 4888
+        });
+      }
+
       S3Upload(params)
       .then((success) => {
         console.log('enter then statement')
         if(success) {
           console.log(success)
           this.setState({ uploadSuccess: true, uploading: false });
+          // Then add user and video ID to firebase
+
+          writeUserData(params.user)
         }
       }, (error) => {
         console.log("ERROR, error", error)
