@@ -19,6 +19,7 @@
     "react": "^0.14.6",
     "react-bootstrap": "^0.28.2",
     "react-dom": "^0.14.6",
+    "react-scripts": "^0.9.5",
     "recordrtc": "^5.2.6",
     "whatwg-fetch": "^0.10.1"
   },
