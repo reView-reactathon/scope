@@ -15,12 +15,14 @@ class RecordPage extends React.Component {
       recordVideo: null,
       src: null,
       uploadSuccess: null,
-      uploading: false
+      uploading: false,
+      user: ''
     };
 
     this.requestUserMedia = this.requestUserMedia.bind(this);
     this.startRecord = this.startRecord.bind(this);
     this.stopRecord = this.stopRecord.bind(this);
+    this.updateUser = this.updateUser.bind(this);
   }
 
   componentDidMount() {
@@ -55,7 +57,8 @@ class RecordPage extends React.Component {
       let params = {
         type: 'video/webm',
         data: this.state.recordVideo.blob,
-        id: Math.floor(Math.random()*90000) + 10000
+        id: Math.floor(Math.random()*90000) + 10000,
+        user: this.state.user
       }
 
       this.setState({ uploading: true });
@@ -68,9 +71,16 @@ class RecordPage extends React.Component {
           this.setState({ uploadSuccess: true, uploading: false });
         }
       }, (error) => {
+        console.log("ERROR, error", error)
         alert(error, 'error occurred. check your aws settings and try again.')
       })
     });
+  }
+
+  updateUser(event){
+    // console.log(event)
+    console.log(event.target.value)
+    this.setState({user: event.target.value})
   }
 
   render() {
@@ -81,6 +91,7 @@ class RecordPage extends React.Component {
         {this.state.uploading ?
           <div>Uploading...</div> : null}
         <div><button onClick={this.startRecord}>Start Record</button></div>
+        <div>Enter username:<input type="text" onBlur={this.updateUser}></input></div>
       </div>
     )
   }
