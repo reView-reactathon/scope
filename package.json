@@ -4,8 +4,8 @@
   "description": "RecordRTC example with React and Node/Express",
   "main": "index.js",
   "scripts": {
-    "web": "react-scripts start",
-    "start": "react-scripts start",
+    "web": "./node_modules/react-scripts/bin/react-scripts.js start",
+    "start": "./node_modules/react-scripts/bin/react-scripts.js start",
     "go": "react-scripts start"
   },
   "author": "Suzanne Wang",
