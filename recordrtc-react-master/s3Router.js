@@ -33,6 +33,8 @@ function S3Router(options) {
     };
     console.log("PARAMs in GET", params)
 
+    // Send data to a Key:Value store so we can associate users with videos
+
     s3.getSignedUrl('putObject', params, function(err, data) {
       if (err) {
         console.log(err);

@@ -55,6 +55,8 @@ export function S3Upload(fileInfo) { //parameters: { type, data, id }
 
       xhr.setRequestHeader('Content-Type', fileInfo.type);
       xhr.setRequestHeader('x-amz-acl', 'public-read');
+      // console.log(fileInfo)
+      // xhr.setRequestHeader('x-amz-meta-username123', "chrisbassano");
 
       return xhr.send(fileInfo.data);
     })
