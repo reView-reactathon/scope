@@ -9,6 +9,9 @@ coverage
 
 # production
 build
+**/build
+**/node_modules
+
 
 # dev stage secrets
 config.dev.json
