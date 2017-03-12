@@ -4,6 +4,7 @@
   "description": "RecordRTC example with React and Node/Express",
   "main": "index.js",
   "scripts": {
+    "web": "react-scripts start",
     "start": "react-scripts start",
     "go": "react-scripts start"
   },
