@@ -20,7 +20,8 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         loaders: ['babel?presets[]=react,presets[]=es2015,presets[]=stage-0']
-      }
+      },
+      { test: /\.css$/, loader: "style-loader!css-loader" }
     ]
   },
 

@@ -1,3 +1,27 @@
 
 .language-wrapper {
 }
+.language-wrapper ul {
+    display: inline-block;
+    width: 100%;
+    list-style: none;
+    padding: 0;
+}
+.language-wrapper .language-container {
+    display: inline;
+    margin: 0 40px;
+}
+.language-wrapper .language-container ul li {
+    float: left;
+    width: 30%;
+    margin: 0 0 30px 0;
+}
+.language-wrapper .language-container ul li span {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.language-wrapper .language-container h3 {
+    text-align: left;
+    margin: 0 0 20px 0;
+}
