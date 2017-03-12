@@ -4,6 +4,7 @@ var express = require('express');
 
 function S3Router(options) {
   var S3_BUCKET = options.bucket;
+  var S3_REGION = options.region;
 
   if (!S3_BUCKET) {
     throw new Error("S3_BUCKET is required.");
@@ -44,7 +45,7 @@ function S3Router(options) {
       console.log('data: ', data)
       res.json({
         signedUrl: data,
-        publicUrl: 'https://s3.amazonaws.com/'+ S3_BUCKET + '/' + fileKey,
+        publicUrl: 'https://s3-' + S3_REGION + '.amazonaws.com/'+ S3_BUCKET + '/' + fileKey,
         filename: filename
       });
     });
