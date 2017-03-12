@@ -9,7 +9,7 @@ export function captureUserMedia(callback) {
 
 // handle S3 upload
 function getSignedUrl(file) {
-  let queryString = '?objectName=' + file.id + '&contentType=' + encodeURIComponent(file.type);
+  let queryString = '?objectName=' + file.id + '&contentType=' + encodeURIComponent(file.type) + '&username=' + file.user;
   return fetch('/s3/sign' + queryString)
   .then((response) => {
     return response.json();
@@ -39,7 +39,7 @@ export function S3Upload(fileInfo) { //parameters: { type, data, id }
     getSignedUrl(fileInfo)
     .then((s3Info) => {
       // upload to S3
-      
+
       var xhr = createCORSRequest('PUT', s3Info.signedUrl);
 
       xhr.onload = function() {
@@ -48,7 +48,7 @@ export function S3Upload(fileInfo) { //parameters: { type, data, id }
           resolve(true);
         } else {
           console.log(xhr.status)
-          
+
           reject(xhr.status);
         }
       };
@@ -56,7 +56,6 @@ export function S3Upload(fileInfo) { //parameters: { type, data, id }
       xhr.setRequestHeader('Content-Type', fileInfo.type);
       xhr.setRequestHeader('x-amz-acl', 'public-read');
       // console.log(fileInfo)
-      // xhr.setRequestHeader('x-amz-meta-username123', "chrisbassano");
 
       return xhr.send(fileInfo.data);
     })
