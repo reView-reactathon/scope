@@ -6,6 +6,6 @@ Clone and cd into the repository, then run:
 
 Then:  
 
-`npm start`  
+`npm go`  
 
 Navigate to `localhost:8080` to view the app!
